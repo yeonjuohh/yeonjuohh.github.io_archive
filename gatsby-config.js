@@ -1,17 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Hado Log`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Hado`,
+      summary: `Data Analyst`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `스타트업에서 데이터 분석가로 일하고 있습니다.`,
+    siteUrl: `https://yeonjuohh.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      instagram: `hado_oh_`,
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Nanum Gothic\:400,700,800`,
+          `Gowun Batang\:400,700`
+        ],
+        display : "swap",
+      }
+    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,6 +42,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-katex`,
+              options: {
+                strict: `ignore`
+              },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {

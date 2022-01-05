@@ -1,9 +1,12 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
+require(`katex/dist/katex.min.css`)
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -21,15 +24,23 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
+        <div className="blog-post-header">
+          <h1 className="blog-post-title">{post.frontmatter.title}</h1>
+          <div className="blog-post-date">{post.frontmatter.date}</div>          
+          {
+            post.frontmatter.tags.map((item) => (      
+              <Link to={`/tags/${kebabCase(item)}/`}>
+                <div className="blog-post-category"> {item} </div>
+              </Link>
+            ))
+          }
+
+        </div>
+
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
         <footer>
           <Bio />
         </footer>
@@ -85,6 +96,8 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        category
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
