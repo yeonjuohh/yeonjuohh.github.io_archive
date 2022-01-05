@@ -13,7 +13,6 @@ const Bio = () => {
 
   return (
     <div className="bio">
-<<<<<<< HEAD
         <div className="bio_pic">
           <StaticImage
             className="bio-avatar"
@@ -30,27 +29,6 @@ const Bio = () => {
             <Link to="/about"><strong>Hado</strong></Link><br />
             세상에 관심이 많은 데이터 분석가입니다. <br />
         </div>
-=======
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={80}
-        height={80}
-        quality={95}
-        alt="Profile picture"
-      />
-      <div>
-        <strong> {author.name} </strong>
-        <br />
-        {author.summary}
-        <br />
-        <a href={`https://github.com/${social?.github || ``}`}>
-          Github
-        </a>
-      </div>
->>>>>>> main
     </div>
   )
 }
