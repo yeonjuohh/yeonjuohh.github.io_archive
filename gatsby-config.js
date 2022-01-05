@@ -1,5 +1,29 @@
 module.exports = {
   siteMetadata: {
+<<<<<<< HEAD
+    title: `Hado Log`,
+    author: {
+      name: `Hado`,
+      summary: `Data Analyst`,
+    },
+    description: `스타트업에서 데이터 분석가로 일하고 있습니다.`,
+    siteUrl: `https://yeonjuohh.github.io/`,
+    social: {
+      instagram: `hado_oh_`,
+    },
+  },
+  plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Nanum Gothic\:400,700,800`,
+          `Gowun Batang\:400,700`
+        ],
+        display : "swap",
+      }
+    },
+=======
     title: `yeonjuohh blog`,
     author: {
       name: `연주`,
@@ -12,6 +36,7 @@ module.exports = {
     },
   },
   plugins: [
+>>>>>>> main
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     {
@@ -32,6 +57,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-katex`,
+              options: {
+                strict: `ignore`
+              },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
