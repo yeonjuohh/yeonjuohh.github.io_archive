@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+<<<<<<< HEAD
     title: `Hado Log`,
     author: {
       name: `Hado`,
@@ -22,6 +23,20 @@ module.exports = {
         display : "swap",
       }
     },
+=======
+    title: `yeonjuohh blog`,
+    author: {
+      name: `연주`,
+      summary: `스타트업에서 데이터를 보고 있습니다.`,
+    },
+    description: `데이터 분석가`,
+    siteUrl: `https://yeonjuohh.github.io/`,
+    social: {
+      github: `yeonjuohh`
+    },
+  },
+  plugins: [
+>>>>>>> main
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     {
