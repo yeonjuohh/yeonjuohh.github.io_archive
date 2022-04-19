@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hado Log]]></title><description><![CDATA[스타트업에서 데이터 분석가로 일하고 있습니다.]]></description><link>https://yeonjuohh.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 11 Apr 2022 11:01:26 GMT</lastBuildDate><item><title><![CDATA[Python으로 그려보는 Cohort Chart]]></title><description><![CDATA[서비스가 성장하기 위해서는 새로운 유저를 유입시키는 것도 중요하지만 기존 유저들이 제품을 계속해서 사용하도록 만들어야 합니다. AARRR 에서 두 번째 R을 담당하는 retention…]]></description><link>https://yeonjuohh.github.io/data-analysis/plot_cohort_chart_using_python/</link><guid isPermaLink="false">https://yeonjuohh.github.io/data-analysis/plot_cohort_chart_using_python/</guid><pubDate>Mon, 11 Apr 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;서비스가 성장하기 위해서는 새로운 유저를 유입시키는 것도 중요하지만 기존 유저들이 제품을 계속해서 사용하도록 만들어야 합니다. &lt;a href=&quot;https://ko.wikipedia.org/wiki/그로스_해킹#AARRR&quot;&gt;AARRR&lt;/a&gt; 에서 두 번째 R을 담당하는 retention은 얼마나 많은 유저가 제품을 지속적으로 사용하고 있는지 측정하는 지표로, 서비스가 잘 성장하고 있는지 보여줍니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hado Log]]></title><description><![CDATA[스타트업에서 데이터 분석가로 일하고 있습니다.]]></description><link>https://yeonjuohh.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Apr 2022 11:44:42 GMT</lastBuildDate><item><title><![CDATA[Python으로 그려보는 Cohort Chart]]></title><description><![CDATA[서비스가 성장하기 위해서는 새로운 유저를 유입시키는 것도 중요하지만 기존 유저들이 제품을 계속해서 사용하도록 만들어야 합니다. AARRR 에서 두 번째 R을 담당하는 retention…]]></description><link>https://yeonjuohh.github.io/data-analysis/plot_cohort_chart_using_python/</link><guid isPermaLink="false">https://yeonjuohh.github.io/data-analysis/plot_cohort_chart_using_python/</guid><pubDate>Mon, 11 Apr 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;서비스가 성장하기 위해서는 새로운 유저를 유입시키는 것도 중요하지만 기존 유저들이 제품을 계속해서 사용하도록 만들어야 합니다. &lt;a href=&quot;https://ko.wikipedia.org/wiki/그로스_해킹#AARRR&quot;&gt;AARRR&lt;/a&gt; 에서 두 번째 R을 담당하는 retention은 얼마나 많은 유저가 제품을 지속적으로 사용하고 있는지 측정하는 지표로, 서비스가 잘 성장하고 있는지 보여줍니다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -88,13 +88,13 @@ df.head()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;user_id: 유저 아이디&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;본격적으로 데이터 전처리를 하기 전에 칼럼을 정리해 주겠습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# (1) date 추가
-df[&apos;date&apos;] = pd.to_datetime(df[&apos;datetime&apos;]).dt.date
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# (1) datetime 타입 수정
+df[&apos;date&apos;] = pd.to_datetime(df[&apos;datetime&apos;])
 
-# user_id, date, duration만 남김
-df = df[[&apos;user_id&apos;, &apos;date&apos;, &apos;duration&apos;]]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;(1) 시간까지 고려해 날짜를 계산할 수도 있지만 분석의 편의성을 위해 datetime를 이용해 date를 만듭니다.
-(2) 앞으로 사용할 user_id, date, duration만 남겨줍니다.&lt;/p&gt;
+# user_id, datetime, duration만 남김
+df = df[[&apos;user_id&apos;, &apos;datetime&apos;, &apos;duration&apos;]]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(1) datetime 변수 타입을 string에서 datetime으로 수정합니다.&lt;/p&gt;
+&lt;p&gt;(2) 앞으로 사용할 user_id, datetime, duration만 남겨줍니다.&lt;/p&gt;
 &lt;h3&gt;Retention 준비 재료 - Core Event&lt;/h3&gt;
 &lt;p&gt;Retention은 보통 재방문율이라고도 알려져 있지만 단순히 방문만 해도 retained 되었다고 한다면 유저가 서비스를 제대로 사용하고 있는지 확인하기 어렵습니다. 모든 서비스에는 유저에게 꼭 주고 싶은 가치와 연관된 이벤트가 있는데 이를 core event라 합니다. 쉽게 설명하면 유저가 제품을 이용하면서 계속 하면 좋겠는 행동을 의미합니다. Core event로 retention을 본다면 유저가 서비스에서 가치를 계속해서 가져가고 있는지 알 수 있습니다.&lt;/p&gt;
 &lt;p&gt;Netflix 데이터에서는 유저가 콘텐츠를 10분 이상 보는 걸 core event라고 정의할 수 있습니다. 홈페이지에 방문해서 아무런 행동을 안 하고 바로 이탈하거나 콘텐츠를 클릭해도 1초만 보고 이탈한 유저들은 Netflix에서 제공하고자 하는 가치를 경험했다고 하기 어렵습니다.&lt;/p&gt;
@@ -107,7 +107,7 @@ df = df.drop(&apos;duration&apos;, axis=1)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;(2) 이제 필요없는 duration은 삭제합니다.&lt;/p&gt;
 &lt;h3&gt;Retention 준비 재료 - Usage Interval&lt;/h3&gt;
 &lt;p&gt;제품의 usage interval을 어떻게 정의하느냐에 따라 똑같은 그래프로 더 많은 인사이트를 얻을 수도 있고 아닐 수도 있습니다. 예를 들어, 이용 주기가 분기별인 제품의 retention을 일별로 계산하면 당연히 Day 1부터 값이 급격하게 감소하고, 그 이후에도 계속 낮은 값을 가지기 때문에 어떠한 이야기를 하기에도 어려운 그래프가 되어버립니다.&lt;/p&gt;
-&lt;p&gt;Usage interval은 보통 정성적으로 정의하지만 데이터로 확인해 보는 방법도 있습니다.&lt;/p&gt;
+&lt;p&gt;Amplitude에서 발행한 Mastering Retention V1에서는 서비스 데이터로 usage interval을 정의하는 방법을 소개해 주고 있습니다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;일정 기간 내 core event를 최소 2번 수행한 유저 데이터를 수집합니다. 보통 60 - 90일 기간을 살펴보는데 탐색하는 기간은 서비스 특징에 따라 달라질 수도 있습니다.&lt;/li&gt;
 &lt;li&gt;Core event를 두 번째로 수행하기까지 얼마만큼의 시간이 걸렸는지 계산합니다.&lt;/li&gt;
@@ -116,13 +116,13 @@ df = df.drop(&apos;duration&apos;, axis=1)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ol&gt;
 &lt;p&gt;위 방법으로 Netflix 데이터의 usage interval을 찾아보겠습니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# (1) 2017-01-01 - 2017-03-31 기간 데이터만 사용
-df_sub = df[(df[&apos;date&apos;] &gt; datetime(2017, 1, 1).date()) &amp;amp; (df[&apos;date&apos;] &amp;lt; datetime(2017, 3, 31).date())]
+df_sub = df[(df[&apos;datetime&apos;] &gt; datetime(2017, 1, 1)) &amp;amp; (df[&apos;datetime&apos;] &amp;lt; datetime(2017, 3, 31))]
 
 # (2) 유저별로 이벤트를 처음 수행한 시간을 계산
-df_sub[&apos;first_event_date&apos;] = df_sub.groupby(&apos;user_id&apos;)[&apos;date&apos;].transform(&apos;min&apos;)
+df_sub[&apos;first_event_date&apos;] = df_sub.groupby(&apos;user_id&apos;)[&apos;datetime&apos;].transform(&apos;min&apos;)
 
-# (3) date 칼럼 이름 수정
-df_sub = df_sub.rename(columns = {&apos;date&apos; : &apos;second_event_date&apos;})
+# (3) datetime 칼럼 이름 수정
+df_sub = df_sub.rename(columns = {&apos;datetime&apos; : &apos;second_event_date&apos;})
 
 # (4) first_event_date와 second_event_date이 같은 데이터 제거
 df_sub = df_sub[df_sub[&apos;first_event_date&apos;] != df_sub[&apos;second_event_date&apos;]]
@@ -131,41 +131,41 @@ df_sub = df_sub[df_sub[&apos;first_event_date&apos;] != df_sub[&apos;second_even
 df_sub = df_sub.sort_values([&apos;user_id&apos;, &apos;second_event_date&apos;])
 df_sub = df_sub.groupby(&apos;user_id&apos;).first().reset_index(drop=False)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;(1) 2017-01-01 - 2017-03-31 기간 데이터만 살펴봅니다.&lt;/p&gt;
-&lt;p&gt;(2) 유저별로 core event를 처음 수행한 시간을 계산합니다. user_id를 기준을 group by 해주고 date의 최솟값을 찾습니다.&lt;/p&gt;
-&lt;p&gt;(3) date 칼럼 이름을 second_event_date으로 수정합니다.&lt;/p&gt;
+&lt;p&gt;(2) 유저별로 core event를 처음 수행한 시간을 계산합니다. user_id를 기준을 group by 해주고 datetime의 최솟값을 찾습니다.&lt;/p&gt;
+&lt;p&gt;(3) datetime 칼럼 이름을 second_event_date으로 수정합니다.&lt;/p&gt;
 &lt;p&gt;(4) 모든 열에 first_event_date을 추가해 주었기 때문에 first_event_date와 second_event_date 값이 같은 데이터가 모든 user_id에 하나씩 있습니다. 이 데이터는 core event를 한 번만 한 것과 똑같은 의미를 가지기 때문에 삭제합니다.&lt;/p&gt;
 &lt;p&gt;(4) 관찰 기간에 core event를 세 번 이상 수행한 유저도 있을 수 있습니다. 하지만, 지금은 이벤트를 정확히 두 번 한 데이터만 있으면 되기 때문에 필요한 데이터만 남깁니다. first_event_date는 같은 user_id에서는 모두 같기 때문에 user_id, second_event_date으로 정렬하면 user_id 중에서 second_event_date가 가장 오래된 데이터가 위로 가게 됩니다. user_id를 기준으로 group by 해주고 가장 첫 번째 열만 가져옵니다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 548px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/2df399952875d7cf5a8415abf11508d4/f058b/img3.png&quot;
+    href=&quot;/static/6dd623284db608034bfad0cbdbff282d/a58fe/img3.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 51.89873417721519%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABaUlEQVQoz02SB6vCQBCE8///mRKsWKOxV5RYErvO45vHQQ6WvdsyO7NJpNK53W46n8/K81yPx0OXy8Xv6/Vqn2WZfVEUvlPH+3Q62XOiz+fjZs54PFatVtN0OvW9Uqn43Wq1VK/X1Ww21Wg0tFwuFcex2u2248Sw3++n6HA4aDKZqFqtOkhRp9MxCxjgB4OBRqORut2uh8EYNb1eT0mS2Farld7vtyIS0F8sFgaez+fabrd6vV5m/nw+/d7tdm7a7/eOYev12jnseDzq+/3+S4bFbDYzO6aSLB+AaAaUZqRxGI58VLJDA7L4zWZj2uwNltj9fvegMAwFaZoaHFUYdcTJAw65iH0ggx31+30Nh0PvCbmAYoEJNQCSw6gDEA+oGdKARKbBEECayifIpQngcLijDoOUAZFEMXIwWNJYZhh2CBM8MfKwI4dHhQH5NSjiYwDGh2GfNIRdMYgh/D7ciQHKCsI/y50d/gHKR+nAYyUuDQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 50.632911392405056%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABaklEQVQoz52R56orMRCD9/0fK5CQ3kmvm94rKaTo8Al84cL5dRZmx7Y8Go0c6Y/f9/v99Tx6v996Pp/6fD6q1+sqlUqaTqdqtVpKpVKqVCrK5/PGEomElsulqCmXy8bS6bRzMpnU+XxWtNls1G63XZTL5XwBMogLhYILa7WastmsMpmMOp2OySGpVqvGi8Wi67bbraLr9SpIe72eBoOBRqORgcViYTXz+dw458PhULvdTrPZzPhqtXJMJhPjt9tN0ev10uPxUL/fV6PRMPHlcvHYFEFAA4poeDweTQgR2H6/dw31WBedTicXNptNj0pmjxq6cjmOY+8hRC3r8XhsEoI9ttlDfnTDGwKAPSSBCLWsIUFVHI+tGIwAozH2Rff73SOhJnQ8HA5WSeAhDfCz2+3+h3EGMYTkfyOzYVQ85PWCXwSqyaEZRGFMLGIdrLFCHoSujEVAxljr9dp+hddkTeYuGFMF9WCcofAHfO7fsaiIkFMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;df_sub 첫 5개 행 출력&quot;
         title=&quot;df_sub 첫 5개 행 출력&quot;
-        src=&quot;/static/2df399952875d7cf5a8415abf11508d4/f058b/img3.png&quot;
-        srcset=&quot;/static/2df399952875d7cf5a8415abf11508d4/c26ae/img3.png 158w,
-/static/2df399952875d7cf5a8415abf11508d4/6bdcf/img3.png 315w,
-/static/2df399952875d7cf5a8415abf11508d4/f058b/img3.png 630w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        src=&quot;/static/6dd623284db608034bfad0cbdbff282d/a58fe/img3.png&quot;
+        srcset=&quot;/static/6dd623284db608034bfad0cbdbff282d/c26ae/img3.png 158w,
+/static/6dd623284db608034bfad0cbdbff282d/6bdcf/img3.png 315w,
+/static/6dd623284db608034bfad0cbdbff282d/a58fe/img3.png 548w&quot;
+        sizes=&quot;(max-width: 548px) 100vw, 548px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;데이터를 전처리 해준 결과입니다. 테이블에서 세 번째 열을 보면 user_id가 003e4ea440인 유저는 2017.03.04에 처음으로 콘텐츠를 10분 이상 보았고, 23일 후인 27일에 두 번째로 보았습니다.&lt;/p&gt;
+&lt;p&gt;데이터를 전처리 해준 결과입니다. 테이블에서 세 번째 열을 보면 user_id가 003e4ea440인 유저는 2017-03-04에 처음으로 콘텐츠를 10분 이상 보았고, 23일 후인 27일에 두 번째로 보았습니다.&lt;/p&gt;
 &lt;p&gt;이제 CDF 를 계산해 보겠습니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;def calculate_usage_interval(df):
     # (1) first_event_date와 second_event_date 사이에 몇 일이 있는지 계산
@@ -204,40 +204,42 @@ df_sub = df_sub.groupby(&apos;user_id&apos;).first().reset_index(drop=False)&lt;
 plot_usage_interval(cdf)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 608px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b1045939721ceea8ee7c1aa89592406e/1bba8/img4.png&quot;
+    href=&quot;/static/6ec417b3a76da638b3078958d4ccb962/18872/img4.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 77.21518987341771%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAABiklEQVQ4y6WUiW7jMAxE+/+/t0Cb7ga5sCk2jSxLFmXdmgWV2kl6piiBgceC/ESatO8WiwV2ux32+z3W6zVWqxW22y36vm9+uVzidVRWre/qDl+EtRZSSmitIWUH1Uuglg/3N2AIAcYYENGVGPa0/4uH+3tsNhs8/v6DXw+P+Cckjv2AZ6lnKa1RazkBLdkGxEsppbai2tWGDO0zlEswocClCvIJ5CMMy0VQyBgMIed8Ag7D0KCXETMgKWEMBbeEd/4M5NI61YEiwUaDZ6OwlR0Gb2AjwQRzlr8W7zGRILQ4AWOMraOiF7CJIEhhJ7sGZkB7IHwib1oiM1AIga7r4EbXUlc2ob3CbwY/34AtOyFgLSGVCkl+bs6tml7bXLJSCm60MD7DcTdegLfEG+B0w3OnXUIu5WcZ8g3PYK8HqDFdwW7x7wKJDJQeYNvM1bkpl2V/5cdxPAOnT48b5Jxrg86NmvzxeHzjeT97BrE/HA6nn8PlaXwCRykF3KzJ84E8Wrz2en3KktcZ+B+ZipRaLNCLdwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 78.48101265822784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAABp0lEQVQ4y6VT2XLiMBD0///a5mXDFR54oNgsBbZuyzosubdGoA0hhIRKV3UxEqP2aNTTzGYzzOdzbLdbrNdrLJfLshZCoOs6PD//xn6/xzWmabrJJoQA4jiOqLH3HnnK5aDWGsaY8j/txxhL/BmaGlDSJetHdrsdnp5+Yf2ywmKxwMtqhc1mU4RjDGfG//lNreJwOJQKnHOFg3MI3sM7B6l7dNLgIAz+Mn1BVfjKFFqhYbQ+CZI6iV4jpAxuI5QbMcSEPE2fXpX6Z619q5Bz/i7BuATRR9zRuFLEm6B3Hi1voYNGHw1eJS+00cAEA+31mQbmFoOBcgpSSzSMsdL4TjDY2INZhT+Cw422JPah/xa101AkSF4jn5E1CMJGpIzHUa9MBj4ejxgGizAmcBvuGvcmMSHnjL7vTz1USkEKDuNHDGF8WJDwTrDaRtiAlDOpPVbh9KFCiY4xSJfwE5xtc1KnazOpTlMyDOWR6JfW9GWKaZLoEK1pn2LKu4yb2oOUEqSUZR5pNumhSID2yQnE2hqyGhVBD0kjW8/QXnPZ2Hto27bc4iv8A5wv4BYJzzbIAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;usage interval cdf 그래프&quot;
         title=&quot;usage interval cdf 그래프&quot;
-        src=&quot;/static/b1045939721ceea8ee7c1aa89592406e/f058b/img4.png&quot;
-        srcset=&quot;/static/b1045939721ceea8ee7c1aa89592406e/c26ae/img4.png 158w,
-/static/b1045939721ceea8ee7c1aa89592406e/6bdcf/img4.png 315w,
-/static/b1045939721ceea8ee7c1aa89592406e/f058b/img4.png 630w,
-/static/b1045939721ceea8ee7c1aa89592406e/1bba8/img4.png 642w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        src=&quot;/static/6ec417b3a76da638b3078958d4ccb962/18872/img4.png&quot;
+        srcset=&quot;/static/6ec417b3a76da638b3078958d4ccb962/c26ae/img4.png 158w,
+/static/6ec417b3a76da638b3078958d4ccb962/6bdcf/img4.png 315w,
+/static/6ec417b3a76da638b3078958d4ccb962/18872/img4.png 608w&quot;
+        sizes=&quot;(max-width: 608px) 100vw, 608px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Netflix 데이터에서는 약 80%의 유저들이 콘텐츠를 10분 이상 본 날로부터 9일째 되는 날 또 다시 콘텐츠를 10분 이상 보았습니다. 분석 결과 usage interval이 9일이라고 나왔지만 분석 및 시각화의 편의성 그리고 정성적으로 생각했을 때 서비스의 특성상 주별 주기(cycle)을 가지고 있다고 할 수 있기 때문에 usage interval을 7일이라 하겠습니다.&lt;/p&gt;
+&lt;p&gt;Netflix 데이터에서는 약 80%의 유저들이 콘텐츠를 10분 이상 본 날로부터 7일째 되는 날 또 다시 콘텐츠를 10분 이상 보았습니다. 즉, usage interval이 7일이라고 할 수 있습니다.&lt;/p&gt;
 &lt;h3&gt;Cohort Chart 그리기&lt;/h3&gt;
 &lt;p&gt;이제 앞에서 정의한 core event와 usage interval을 참고해 cohort chart를 그려보겠습니다. 먼저 그래프를 그릴 수 있도록 데이터를 처리해 줘야 합니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;def calculate_retention_matrix(df):
-    # (1) usage interval에 맞춰 날짜를 truncate 
+    # (1) date 칼럼 추가, usage interval에 맞춰 날짜를 truncate 
+    df[&apos;date&apos;] = pd.to_datetime(df[&apos;datetime&apos;]).dt.date
+    df = df.drop(&apos;datetime&apos;, axis=1)
+
     df[&apos;date&apos;] = df[&apos;date&apos;] - pd.to_timedelta(pd.to_datetime(df[&apos;date&apos;]).dt.dayofweek, unit=&apos;d&apos;)
     
     # (2) 유저별로 이벤트를 처음 수행한 날짜를 계산
@@ -269,7 +271,7 @@ plot_usage_interval(cdf)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     return retention_matrix
 
 retention_matrix = calculate_retention_matrix(df)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;(1) 주별 retention 그래프를 만들기 위해 date를 해당주의 월요일로 치환합니다.&lt;/p&gt;
+&lt;p&gt;(1) 날짜 계산을 쉽게 하기 위해 datetime으로 date를 만듭니다. 그리고 주별 retention 그래프를 만들기 위해 date를 해당주의 월요일로 치환합니다.&lt;/p&gt;
 &lt;p&gt;(2) 주어진 데이터에서 이벤트를 처음 수행한 날짜를 기준으로 유저를 나눕니다. 보통 가입 날짜로 cohort를 만들지만, 가입 데이터가 없기 때문에 첫 번째 이벤트 발생 날짜를 사용하겠습니다.&lt;/p&gt;
 &lt;p&gt;(3) Cohort마다 시간이 지날수록 몇 명의 유저가 core event를 하는지 셉니다.&lt;/p&gt;
 &lt;p&gt;&lt;span
