@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-js",
+    "path": "/tags/ab-test/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/data-analysis/bayesian_ab_test_bayes_theorem/"},"frontmatter":{"title":"베이지안 A/B 테스트 - Bayes’ theorem"}}}]}},"pageContext":{"tag":"ab-test"}},
+    "staticQueryHashes": []}
