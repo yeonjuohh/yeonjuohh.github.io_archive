@@ -26,6 +26,13 @@ import numpy as np
 import random</p>
 <h2>from scipy.stats import beta
 from scipy.stats import binom</h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import random
+
+from scipy.stats import beta
+from scipy.stats import binom</code></pre></div>
 <h2>Markov Chain Monte Carlo 이해</h2>
 <p><a href="https://yeonjuohh.github.io/data-analysis/bayesian_ab_test_bayes_theorem/">저번 글</a>에서는 베이지안 접근 방식으로 A/B 테스트 결과를 해석해 보았습니다. Bayes’ theorem을 사용하면 사후 분포를 수리적으로 유도할 수 있어 사후 평균, 사후 분산 등을 쉽게 계산할 수 있습니다.</p>
 <p>모든 문제에서 사후 분포를 계산할 수 있으면 좋겠지만 실제로는 분포가 복잡하거나 모수가 많아 어려운 경우가 더 많습니다. 이런 문제에서는 사후 분포로부터 랜덤 표본을 생성해, 표본의 수를 충분히 크게 함으로써 분포에 대한 추론을 할 수 있습니다.</p>
