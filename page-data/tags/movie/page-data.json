@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-js",
+    "path": "/tags/movie/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/log/2021_movie_list/"},"frontmatter":{"title":"2021년에 본 영화 리스트"}}}]}},"pageContext":{"tag":"movie"}},
+    "staticQueryHashes": []}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-js",
+    "path": "/tags/metric/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/data-analysis/north_star_playbook/"},"frontmatter":{"title":"The North Star Playbook 정리"}}}]}},"pageContext":{"tag":"metric"}},
+    "staticQueryHashes": []}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-js",
+    "path": "/tags/casual-inference/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/behavioral-data-analysis-with-r&python/ch1/"},"frontmatter":{"title":"Ch6. Handling Missinng Data"}}}]}},"pageContext":{"tag":"casual-inference"}},
+    "staticQueryHashes": []}

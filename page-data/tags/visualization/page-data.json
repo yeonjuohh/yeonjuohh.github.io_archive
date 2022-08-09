@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-js",
+    "path": "/tags/visualization/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/data-analysis/plot_cohort_chart_using_python/"},"frontmatter":{"title":"Python으로 그려보는 Cohort Chart"}}}]}},"pageContext":{"tag":"visualization"}},
+    "staticQueryHashes": []}

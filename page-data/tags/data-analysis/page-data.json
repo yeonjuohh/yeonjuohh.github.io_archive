@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-js",
+    "path": "/tags/data-analysis/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":4,"edges":[{"node":{"fields":{"slug":"/data-analysis/north_star_playbook/"},"frontmatter":{"title":"The North Star Playbook 정리"}}},{"node":{"fields":{"slug":"/data-analysis/bayesian_ab_test_mcmc/"},"frontmatter":{"title":"베이지안 A/B 테스트 - MCMC"}}},{"node":{"fields":{"slug":"/data-analysis/bayesian_ab_test_bayes_theorem/"},"frontmatter":{"title":"베이지안 A/B 테스트 - Bayes’ theorem"}}},{"node":{"fields":{"slug":"/data-analysis/plot_cohort_chart_using_python/"},"frontmatter":{"title":"Python으로 그려보는 Cohort Chart"}}}]}},"pageContext":{"tag":"data-analysis"}},
+    "staticQueryHashes": []}
