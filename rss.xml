@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hado Log]]></title><description><![CDATA[스타트업에서 데이터 분석가로 일하고 있습니다.]]></description><link>https://yeonjuohh.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 09 Aug 2022 09:21:31 GMT</lastBuildDate><item><title><![CDATA[The North Star Playbook 정리]]></title><description><![CDATA[✔︎ Amplitude에서 발행한 North Star Playbook을 읽고 정리한 내용입니다. North Star Framework…]]></description><link>https://yeonjuohh.github.io/data-analysis/north_star_playbook/</link><guid isPermaLink="false">https://yeonjuohh.github.io/data-analysis/north_star_playbook/</guid><pubDate>Tue, 09 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;✔︎ Amplitude에서 발행한 &lt;a href=&quot;https://amplitude.com/north-star&quot;&gt;North Star Playbook&lt;/a&gt;을 읽고 정리한 내용입니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hado Log]]></title><description><![CDATA[스타트업에서 데이터 분석가로 일하고 있습니다.]]></description><link>https://yeonjuohh.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 13 Aug 2022 02:36:04 GMT</lastBuildDate><item><title><![CDATA[The North Star Playbook 정리]]></title><description><![CDATA[✔︎ Amplitude에서 발행한 North Star Playbook을 읽고 정리한 내용입니다. North Star Framework…]]></description><link>https://yeonjuohh.github.io/data-analysis/north_star_playbook/</link><guid isPermaLink="false">https://yeonjuohh.github.io/data-analysis/north_star_playbook/</guid><pubDate>Tue, 09 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;✔︎ Amplitude에서 발행한 &lt;a href=&quot;https://amplitude.com/north-star&quot;&gt;North Star Playbook&lt;/a&gt;을 읽고 정리한 내용입니다.&lt;/p&gt;
 &lt;p&gt;North Star Framework는 하나의 중요한 지표를 중심으로 제품을 관리하는 방법이다. 이 지표는 제품이 유저에게 제공해 주고자 하는 가치와 장기적 비즈니스 관점에서 유의해야 한다. 잘 정의된 North Star 지표는 팀이 우선순위를 가지고, 의사소통하고 영향/성과에 집중할 수 있도록 돕는다.&lt;/p&gt;
 &lt;p&gt;North Star 지표는 다음 조건들을 만족해야 한다.&lt;/p&gt;
 &lt;ol&gt;
@@ -49,7 +49,39 @@ North Star은 명확하고 구체적이어야 한다. 또한, 회사가 장기�
 &lt;h2&gt;Dignosing Missing Data&lt;/h2&gt;
 &lt;p&gt;이제 누락된 값의 원인을 찾을 차례이다. CD를 사용해서 해결할 수 있다.&lt;/p&gt;
 &lt;p&gt;빈 값이 있는 상자는 점선으로 처리한다. 그리고 이 변수가 빈 값이라는 걸 알려주는 변수를 추가한다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;img1.png&quot; alt=&quot;CD with missing data&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/be01aada9785b75ca4798fb466e8d54f/ab1db/img1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 37.34177215189873%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAHABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3gUH/8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQABBQJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAGBAAAwEBAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8hosvROn//2gAMAwEAAgADAAAAEIAP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGRABAQEBAQEAAAAAAAAAAAAAAREAIWGB/9oACAEBAAE/EOlI7kp9N0FRPHf/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;CD with missing data&quot;
+        title=&quot;CD with missing data&quot;
+        src=&quot;/static/be01aada9785b75ca4798fb466e8d54f/828fb/img1.jpg&quot;
+        srcset=&quot;/static/be01aada9785b75ca4798fb466e8d54f/ff44c/img1.jpg 158w,
+/static/be01aada9785b75ca4798fb466e8d54f/a6688/img1.jpg 315w,
+/static/be01aada9785b75ca4798fb466e8d54f/828fb/img1.jpg 630w,
+/static/be01aada9785b75ca4798fb466e8d54f/0ede0/img1.jpg 945w,
+/static/be01aada9785b75ca4798fb466e8d54f/3ac88/img1.jpg 1260w,
+/static/be01aada9785b75ca4798fb466e8d54f/ab1db/img1.jpg 3097w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;Cases of Missingness: Rubin’s Classification&lt;/h2&gt;
 &lt;p&gt;빈 값에 대한 원인은 MECE 하게 3가지로 설명할 수 있다.&lt;/p&gt;
 &lt;ol&gt;
